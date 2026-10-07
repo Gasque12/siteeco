@@ -1,0 +1,1795 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoRefil – Mercado de Produtos a Granel | Limpeza e Higiene Sustentável</title>
+  <meta name="description" content="EcoRefil: Mercado de produtos de limpeza e higiene a granel em Piracicaba/SP. Você compra o produto, não a embalagem. Pedidos por WhatsApp, assinaturas e delivery por bicicleta elétrica.">
+  <link rel="icon" type="image/svg+xml" href="img/logo.svg">
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Estilos Principais -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       HEADER FIXO
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="container header-container">
+      <!-- Logo -->
+      <a href="#inicio" class="brand-logo-wrap" title="EcoRefil – Início">
+        <img src="img/logo.svg" alt="EcoRefil" class="brand-logo-img">
+      </a>
+
+      <!-- Menu Principal -->
+      <nav>
+        <ul class="nav-menu" id="main-nav-menu">
+          <li><a href="#inicio" class="nav-link">Início</a></li>
+          <li><a href="#produtos" class="nav-link">Produtos</a></li>
+          <li><a href="#como-funciona" class="nav-link">Como funciona</a></li>
+          <li><a href="#beneficios" class="nav-link">Benefícios</a></li>
+          <li><a href="#delivery" class="nav-link">Delivery</a></li>
+          <li><a href="#sobre" class="nav-link">Sobre</a></li>
+          <li><a href="#projeto-empresarial" class="nav-link">Projeto Escolar <span class="nav-tag-badge">Empresa</span></a></li>
+          <li><a href="#localizacao" class="nav-link">Localização</a></li>
+          <li><a href="#investimento" class="nav-link">Investimento</a></li>
+          <li><a href="#contato" class="nav-link">Contato</a></li>
+        </ul>
+      </nav>
+
+      <!-- Ações do Header (Direita) -->
+      <div class="header-actions">
+        <!-- Pesquisa Rápida -->
+        <button type="button" class="icon-action-btn" onclick="focusProductSearch()" title="Pesquisar produtos" aria-label="Pesquisar">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <span>Buscar</span>
+        </button>
+
+        <!-- Botão Usuário / Login / Perfil -->
+        <button type="button" class="icon-action-btn" id="auth-trigger-btn" onclick="openAuthModal()" title="Minha Conta e EcoPontos" aria-label="Usuário">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span id="user-nav-name">Entrar</span>
+          <span id="user-points-badge" class="user-points-badge hidden">0 pts</span>
+        </button>
+
+        <!-- Botão Painel Admin -->
+        <button type="button" class="icon-action-btn admin-header-btn" onclick="openAdminModal()" title="Painel Administrativo da Empresa" aria-label="Admin">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          <span>Admin</span>
+        </button>
+
+        <!-- Botão Carrinho -->
+        <button type="button" class="icon-action-btn" id="cart-trigger-btn" onclick="toggleCart()" title="Meu Carrinho" aria-label="Carrinho">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span>Carrinho</span>
+          <span class="cart-count-badge hidden">0</span>
+        </button>
+
+        <!-- Menu Hambúrguer (Mobile) -->
+        <button type="button" class="mobile-toggle" id="mobile-menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       1. HERO SECTION (PÁGINA INICIAL)
+       ======================================================================== -->
+  <section class="hero-section" id="inicio">
+    <div class="container hero-grid">
+      <!-- Coluna de Texto & Slogan -->
+      <div class="hero-content">
+        <div class="hero-tag">
+          <span>🌿</span> Mercado Sustentável de Produtos a Granel
+        </div>
+        <h1 class="hero-title">
+          “Você compra o produto, <br>
+          <span class="highlight">não a embalagem.”</span>
+        </h1>
+        <p class="hero-subtitle">
+          Produtos de limpeza e higiene a granel, com praticidade, economia e menos desperdício.
+          Reutilize seus recipientes e abasteça apenas o que precisa.
+        </p>
+
+        <div class="hero-cta-group">
+          <button type="button" class="btn btn-primary btn-lg" onclick="scrollToSection('produtos')">
+            🛒 Comprar produtos
+          </button>
+          <button type="button" class="btn btn-outline btn-lg" onclick="scrollToSection('como-funciona')">
+            💧 Como funciona
+          </button>
+        </div>
+
+        <div class="hero-trust-badges">
+          <div class="trust-badge-item">
+            <span class="badge-icon">🚲</span>
+            <span>Delivery por bike elétrica</span>
+          </div>
+          <div class="trust-badge-item">
+            <span class="badge-icon">📱</span>
+            <span>Pedidos pelo WhatsApp</span>
+          </div>
+          <div class="trust-badge-item">
+            <span class="badge-icon">⭐</span>
+            <span>Programa EcoPontos</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Coluna Visual da Loja -->
+      <div class="hero-media-wrapper">
+        <div class="hero-image-frame">
+          <img src="img/ecorefil-store.jpg" alt="Interior aconchegante da loja EcoRefil com prateleiras de madeira, dispensers e frascos reutilizáveis" class="hero-store-img">
+        </div>
+
+        <!-- Badges Flutuantes -->
+        <div class="floating-eco-card floating-card-1">
+          <span class="card-icon">♻️</span>
+          <div>
+            <strong>100% Ecológico & Biodegradável</strong>
+            <span>Menos 85% de plástico descartado</span>
+          </div>
+        </div>
+
+        <div class="floating-eco-card floating-card-2">
+          <span class="card-icon">💧</span>
+          <div>
+            <strong>Refil a partir de R$ 2,72/L</strong>
+            <span>Pague só o produto líquido</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Barra de Métricas de Impacto -->
+  <div class="hero-metrics-bar">
+    <div class="container metrics-grid">
+      <div class="metric-box">
+        <div class="metric-number">-85%</div>
+        <div class="metric-label">Descarte de embalagens plásticas</div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-number">R$ 2,72</div>
+        <div class="metric-label">Preço inicial do litro a granel</div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-number">0 g CO₂</div>
+        <div class="metric-label">Emissão na entrega de bike elétrica</div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-number">+10 pts</div>
+        <div class="metric-label">EcoPontos a cada pedido realizado</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       2. SEÇÃO DE PRODUTOS
+       ======================================================================== -->
+  <section class="section section-alt" id="produtos">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Catálogo a Granel</span>
+        <h2 class="section-title">Produtos de Limpeza e Higiene</h2>
+        <p class="section-subtitle">
+          Escolha os litros desejados, traga seu frasco ou receba em garrafas retornáveis de vidro âmbar e PET reciclado.
+        </p>
+      </div>
+
+      <!-- Barra de Filtros e Pesquisa -->
+      <div class="products-filter-bar">
+        <div class="filter-pills-group">
+          <button type="button" class="filter-btn active" data-category="todos">Todos</button>
+          <button type="button" class="filter-btn" data-category="limpeza">Limpeza</button>
+          <button type="button" class="filter-btn" data-category="higiene">Higiene</button>
+          <button type="button" class="filter-btn" data-category="mais-vendidos">⭐ Mais vendidos</button>
+        </div>
+
+        <div class="product-search-box">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5A6A61" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <input type="text" id="product-search-input" class="product-search-input" placeholder="Pesquisar por nome, tipo ou benefício...">
+        </div>
+      </div>
+
+      <!-- Grade Funcional de Produtos -->
+      <div class="products-grid" id="products-grid">
+        <!-- Renderizado dinamicamente por products.js -->
+      </div>
+
+      <!-- Estado Vazio -->
+      <div id="products-empty-state" class="cart-empty-message hidden">
+        <div class="cart-empty-icon">🔍</div>
+        <h3>Nenhum produto encontrado</h3>
+        <p>Tente ajustar a pesquisa ou escolher outra categoria de produtos a granel.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       3. COMO FUNCIONA (6 ETAPAS)
+       ======================================================================== -->
+  <section class="section section-cream" id="como-funciona">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Simplicidade & Reutilização</span>
+        <h2 class="section-title">Como Funciona o EcoRefil</h2>
+        <p class="section-subtitle">
+          Comprar a granel é rápido, descomplicado e amigo do meio ambiente. Veja o passo a passo em 6 etapas:
+        </p>
+      </div>
+
+      <div class="how-it-works-grid">
+        <!-- Etapa 01 -->
+        <div class="step-card">
+          <div class="step-number">01</div>
+          <div class="step-icon-wrap">🍶</div>
+          <h3 class="step-title">Leve sua embalagem</h3>
+          <p class="step-desc">
+            Traga qualquer recipiente limpo que já tenha em casa — garrafas PET, potes de vidro, frascos antigos ou use nossos frascos retornáveis.
+          </p>
+        </div>
+
+        <!-- Etapa 02 -->
+        <div class="step-card">
+          <div class="step-number">02</div>
+          <div class="step-icon-wrap">✨</div>
+          <h3 class="step-title">Escolha o produto</h3>
+          <p class="step-desc">
+            Selecione entre nossas opções de detergentes, desinfetantes, amaciantes, sabões líquidos, sabonetes e shampoos concentrados e biodegradáveis.
+          </p>
+        </div>
+
+        <!-- Etapa 03 -->
+        <div class="step-card">
+          <div class="step-number">03</div>
+          <div class="step-icon-wrap">⚖️</div>
+          <h3 class="step-title">Escolha a quantidade</h3>
+          <p class="step-desc">
+            Aqui não há pacotes fechados forçados. Você define se quer 500ml, 1 litro, 2 litros ou mais, comprando rigorosamente o que vai utilizar.
+          </p>
+        </div>
+
+        <!-- Etapa 04 -->
+        <div class="step-card">
+          <div class="step-number">04</div>
+          <div class="step-icon-wrap">🚰</div>
+          <h3 class="step-title">Faça o refil</h3>
+          <p class="step-desc">
+            Abasteça com facilidade através dos nossos dispensers dosadores higiênicos de aço inoxidável ou peça ajuda ao nosso atendente.
+          </p>
+        </div>
+
+        <!-- Etapa 05 -->
+        <div class="step-card">
+          <div class="step-number">05</div>
+          <div class="step-icon-wrap">💳</div>
+          <h3 class="step-title">Pague</h3>
+          <p class="step-desc">
+            Pague apenas pelo produto líquido recebido via Pix, cartão ou dinheiro — sem pagar pela embalagem descartável inflacionada.
+          </p>
+        </div>
+
+        <!-- Etapa 06 -->
+        <div class="step-card">
+          <div class="step-number">06</div>
+          <div class="step-icon-wrap">♻️</div>
+          <h3 class="step-title">Reutilize</h3>
+          <p class="step-desc">
+            Leve para casa, utilize no dia a dia e, quando o produto acabar, traga o mesmo recipiente de volta para ganhar mais EcoPontos!
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       4. DIFERENCIAIS
+       ======================================================================== -->
+  <section class="section section-alt" id="diferenciais">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Por Que Escolher a EcoRefil?</span>
+        <h2 class="section-title">Nossos Diferenciais Competitivos</h2>
+        <p class="section-subtitle">
+          Inovamos o hábito cotidiano de limpeza unindo sustentabilidade real à máxima conveniência.
+        </p>
+      </div>
+
+      <div class="differentials-grid">
+        <div class="differential-card">
+          <span class="diff-icon">♻️</span>
+          <h3 class="diff-title">Reutilização de embalagens</h3>
+          <p class="diff-desc">Eliminamos o desperdício plástico na raiz. Uma única garrafa de vidro pode ser reutilizada centenas de vezes.</p>
+        </div>
+
+        <div class="differential-card">
+          <span class="diff-icon">📱</span>
+          <h3 class="diff-title">Pedidos pelo WhatsApp</h3>
+          <p class="diff-desc">Agilidade total: selecione seus produtos no site e envie a lista pronta com um clique direto para nosso número (19) 99866-8149.</p>
+        </div>
+
+        <div class="differential-card">
+          <span class="diff-icon">🚲</span>
+          <h3 class="diff-title">Delivery sustentável</h3>
+          <p class="diff-desc">Entregas feitas em bicicleta elétrica na Vila Rezende e bairros vizinhos, com zero emissão de poluentes e baixo ruído urbano.</p>
+        </div>
+
+        <div class="differential-card">
+          <span class="diff-icon">⭐</span>
+          <h3 class="diff-title">Programa de pontos</h3>
+          <p class="diff-desc">Cada compra rende +10 EcoPontos e cada frasco reutilizado rende +5 pontos adicionais para trocar por descontos e frete grátis.</p>
+        </div>
+
+        <div class="differential-card">
+          <span class="diff-icon">🔄</span>
+          <h3 class="diff-title">Assinatura mensal</h3>
+          <p class="diff-desc">Receba o refil dos seus produtos essenciais todo mês sem precisar lembrar de fazer compras de última hora no mercado.</p>
+        </div>
+
+        <div class="differential-card">
+          <span class="diff-icon">💰</span>
+          <h3 class="diff-title">Compra da quantidade necessária</h3>
+          <p class="diff-desc">Evite produtos vencendo no armário. Você adquire apenas o volume exato que atende a sua rotina e seu orçamento.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       5. PROGRAMA ECOPONTOS
+       ======================================================================== -->
+  <section class="section section-cream" id="beneficios">
+    <div class="container">
+      <div class="ecopoints-showcase-box">
+        <div class="ecopoints-grid">
+          <div>
+            <span class="ecopoints-badge-pill">Programa de Fidelidade Verde</span>
+            <h2 class="ecopoints-title">EcoPontos: Quanto mais você reutiliza, mais você economiza!</h2>
+            <p class="ecopoints-desc">
+              Nosso compromisso é valorizar o cliente que adota práticas sustentáveis no dia a dia. Suas atitudes ecológicas se convertem em descontos reais na loja.
+            </p>
+
+            <ul class="ecopoints-rules-list">
+              <li><span>🌱</span> <strong>Cada compra realizada:</strong> +10 EcoPontos automáticos.</li>
+              <li><span>♻️</span> <strong>Cada embalagem reutilizada:</strong> +5 EcoPontos por item.</li>
+              <li><span>✨</span> <strong>Cadastro novo:</strong> +20 EcoPontos de presente de boas-vindas.</li>
+            </ul>
+
+            <button type="button" class="btn btn-gold btn-lg" onclick="openEcoPointsModal()">
+              🎁 Ver benefícios e resgatar
+            </button>
+          </div>
+
+          <div class="ecopoints-user-tracker">
+            <div class="tracker-header">
+              <span class="tracker-subtitle">Seu Saldo Atual no Navegador</span>
+              <div class="tracker-count">
+                <span id="home-user-ecopoints">0</span> <span>EcoPontos</span>
+              </div>
+            </div>
+
+            <div class="progress-track">
+              <div class="progress-fill" id="ecopoints-progress-bar" style="width: 10%;"></div>
+            </div>
+            <div class="progress-legend" id="ecopoints-next-goal">
+              0/50 pts - Próximo: 5% de desconto (meta: 50 pts)
+            </div>
+
+            <div class="benefits-tiers-row">
+              <div class="tier-item">
+                <span class="tier-pts">50 pts</span>
+                <span class="tier-reward">5% OFF</span>
+              </div>
+              <div class="tier-item">
+                <span class="tier-pts">100 pts</span>
+                <span class="tier-reward">10% OFF</span>
+              </div>
+              <div class="tier-item">
+                <span class="tier-pts">200 pts</span>
+                <span class="tier-reward">Frete Grátis</span>
+              </div>
+            </div>
+
+            <small style="display:block; opacity:0.8; font-size:0.78rem; text-align:center;">
+              *Pontos acumulados e salvos no localStorage automaticamente a cada compra.
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       6. ASSINATURA MENSAL (ECOREFIL MENSAL)
+       ======================================================================== -->
+  <section class="section section-alt" id="assinatura">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Praticidade Recorrente</span>
+        <h2 class="section-title">EcoRefil Mensal</h2>
+        <p class="section-subtitle">
+          Nunca mais fique sem sabão ou detergente. Escolha seu plano de assinatura mensal e receba seus refis em casa via bike elétrica com data marcada.
+        </p>
+      </div>
+
+      <div class="subscription-plans-grid">
+        <!-- Plano Básico -->
+        <div class="plan-card">
+          <h3 class="plan-name">Básico</h3>
+          <p class="plan-desc">Perfeito para quem mora sozinho ou casais com consumo moderado de limpeza.</p>
+          <div class="plan-price-wrap">
+            <span class="currency">R$</span>
+            <span class="amount">39,90</span>
+            <span class="period">/ mês</span>
+          </div>
+
+          <ul class="plan-features-list">
+            <li><span class="check-icon">✓</span> 2 Litros de Detergente Ecológico</li>
+            <li><span class="check-icon">✓</span> 1 Litro de Desinfetante Eucalipto</li>
+            <li><span class="check-icon">✓</span> 1 Litro de Amaciante Toque de Algodão</li>
+            <li><span class="check-icon">✓</span> 1 Entrega mensal de bike programada</li>
+            <li><span class="check-icon">✓</span> +25 EcoPontos bônus mensais</li>
+          </ul>
+
+          <button type="button" class="btn btn-outline btn-block" onclick="openSubscriptionModal('Básico', '39,90', '2L Detergente, 1L Desinfetante e 1L Amaciante mensalmente.')">
+            Assinar Plano Básico
+          </button>
+        </div>
+
+        <!-- Plano Família (Destaque) -->
+        <div class="plan-card featured">
+          <div class="plan-ribbon">MAIS POPULAR</div>
+          <h3 class="plan-name">Família</h3>
+          <p class="plan-desc">Ideal para famílias de 3 a 5 pessoas que buscam economia e alto rendimento.</p>
+          <div class="plan-price-wrap">
+            <span class="currency">R$</span>
+            <span class="amount">69,90</span>
+            <span class="period">/ mês</span>
+          </div>
+
+          <ul class="plan-features-list">
+            <li><span class="check-icon">✓</span> 4 Litros de Detergente Ecológico</li>
+            <li><span class="check-icon">✓</span> 2 Litros de Sabão Líquido Concentrado</li>
+            <li><span class="check-icon">✓</span> 2 Litros de Amaciante Toque de Algodão</li>
+            <li><span class="check-icon">✓</span> 1 Litro de Desinfetante Eucalipto</li>
+            <li><span class="check-icon">✓</span> 1 Litro de Sabonete Líquido Aloe Vera</li>
+            <li><span class="check-icon">✓</span> Entrega mensal gratuita na Vila Rezende</li>
+            <li><span class="check-icon">✓</span> +50 EcoPontos bônus mensais</li>
+          </ul>
+
+          <button type="button" class="btn btn-primary btn-block" onclick="openSubscriptionModal('Família', '69,90', '4L Detergente, 2L Sabão Líquido, 2L Amaciante, 1L Desinfetante e 1L Sabonete.')">
+            Assinar Plano Família
+          </button>
+        </div>
+
+        <!-- Plano Completo -->
+        <div class="plan-card">
+          <h3 class="plan-name">Completo</h3>
+          <p class="plan-desc">O pacote definitivo: limpeza residencial pesada e linha botânica de higiene pessoal.</p>
+          <div class="plan-price-wrap">
+            <span class="currency">R$</span>
+            <span class="amount">99,90</span>
+            <span class="period">/ mês</span>
+          </div>
+
+          <ul class="plan-features-list">
+            <li><span class="check-icon">✓</span> Linha completa de limpeza (8L no total)</li>
+            <li><span class="check-icon">✓</span> 2 Litros de Sabão Líquido e 2L Água Sanitária</li>
+            <li><span class="check-icon">✓</span> 2 Litros de Sabonete Líquido Hidratante</li>
+            <li><span class="check-icon">✓</span> 1 Litro de Shampoo Alecrim e Camomila</li>
+            <li><span class="check-icon">✓</span> 2 Entregas mensais ou reposição flexível</li>
+            <li><span class="check-icon">✓</span> Suporte VIP e frascos âmbar inclusos</li>
+            <li><span class="check-icon">✓</span> +80 EcoPontos bônus mensais</li>
+          </ul>
+
+          <button type="button" class="btn btn-outline btn-block" onclick="openSubscriptionModal('Completo', '99,90', 'Linha de limpeza integral (8L) mais sabonete líquido e shampoo botânico.')">
+            Assinar Plano Completo
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       7. DELIVERY SUSTENTÁVEL
+       ======================================================================== -->
+  <section class="section section-cream" id="delivery">
+    <div class="container">
+      <div class="delivery-section-grid">
+        <div>
+          <span class="section-tag">Logística Limpa</span>
+          <h2 class="section-title">Delivery Sustentável por Bicicleta Elétrica</h2>
+          <p class="section-subtitle">
+            O EcoRefil utiliza bicicleta elétrica cargueira para realizar entregas ágeis e 100% livres de emissões de carbono em Piracicaba.
+          </p>
+
+          <div class="delivery-highlights-list">
+            <div class="delivery-highlight-item">
+              <span class="icon">🚲</span>
+              <div>
+                <strong>Bicicleta Elétrica</strong>
+                <p>Zero combustível fóssil e zero barulho.</p>
+              </div>
+            </div>
+            <div class="delivery-highlight-item">
+              <span class="icon">📦</span>
+              <div>
+                <strong>Embalagens Reutilizáveis</strong>
+                <p>Transportadas com proteção e higiene.</p>
+              </div>
+            </div>
+            <div class="delivery-highlight-item">
+              <span class="icon">📱</span>
+              <div>
+                <strong>Pedidos pelo WhatsApp</strong>
+                <p>Confirmação rápida direto no chat.</p>
+              </div>
+            </div>
+            <div class="delivery-highlight-item">
+              <span class="icon">🌱</span>
+              <div>
+                <strong>Bairros Próximos</strong>
+                <p>Foco na Vila Rezende e adjacências.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Calculadora de Entrega -->
+          <div class="delivery-calc-card">
+            <h3 class="calc-title">Calcular entrega sustentável</h3>
+            <p class="calc-desc">Consulte a taxa simulada e o tempo médio para o seu bairro:</p>
+
+            <div class="calc-select-wrap">
+              <label for="delivery-calc-neighborhood">Selecione seu bairro:</label>
+              <select id="delivery-calc-neighborhood" class="form-select">
+                <option value="Vila Rezende" selected>Vila Rezende (Região da Loja)</option>
+                <option value="São Dimas">São Dimas</option>
+                <option value="Cidade Alta">Cidade Alta</option>
+                <option value="Centro">Centro</option>
+                <option value="Jardim Primavera">Jardim Primavera</option>
+              </select>
+            </div>
+
+            <div id="delivery-calc-result" class="calc-result-box">
+              <div class="result-row">
+                <span>Taxa de Entrega de Bike:</span>
+                <strong class="result-fee-big" id="calc-fee-val">R$ 3,00</strong>
+              </div>
+              <div class="result-row">
+                <span>Tempo Estimado:</span>
+                <strong id="calc-time-val">20 a 30 min</strong>
+              </div>
+              <div class="result-row">
+                <span>Pegada de Carbono Evitada:</span>
+                <strong class="eco-co2-badge" id="calc-co2-val">-320g CO₂</strong>
+              </div>
+              <div class="result-row">
+                <span>Distância da Loja:</span>
+                <span id="calc-distance-val">1,2 km</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="delivery-image-wrap">
+          <img src="img/delivery-bike.jpg" alt="Bicicleta elétrica cargueira com baú de madeira transportando frascos e produtos ecológicos EcoRefil" class="delivery-bike-img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       8. SEÇÃO SOBRE O ECOREFIL
+       ======================================================================== -->
+  <section class="section section-alt" id="sobre">
+    <div class="container">
+      <div class="about-grid">
+        <div>
+          <span class="section-tag">Nossa Missão</span>
+          <h2 class="section-title">Sobre o EcoRefil</h2>
+          <div class="about-quote-box">
+            “O EcoRefil é uma proposta de mercado de produtos a granel criada para oferecer uma alternativa mais prática e sustentável para a compra de produtos de limpeza e higiene.”
+          </div>
+          <p style="margin-bottom: 1.5rem; color: var(--color-text-muted);">
+            Em um mundo inundado por frascos plásticos de uso único, acreditamos que a verdadeira revolução começa nas escolhas simples do cotidiano. Em vez de comprar mais uma garrafa que acabará no lixo, você recarrega o que já possui.
+          </p>
+
+          <ul class="about-objectives-list">
+            <li><span>🌱</span> Reduzir embalagens descartáveis;</li>
+            <li><span>💧</span> Facilitar compras inteligentes e fracionadas;</li>
+            <li><span>💰</span> Oferecer economia real ao bolso do consumidor;</li>
+            <li><span>♻️</span> Incentivar a cultura de reutilização contínua;</li>
+            <li><span>🌍</span> Aproximar a sustentabilidade do cotidiano das pessoas.</li>
+          </ul>
+        </div>
+
+        <div class="about-pillars-grid">
+          <div class="pillar-box">
+            <span style="font-size: 2rem;">💡</span>
+            <h4>Ideia do Negócio</h4>
+            <p>Comercializar produtos químicos de saneamento domissanitário e higiene por litro, eliminando a embalagem como custo e resíduo.</p>
+          </div>
+          <div class="pillar-box">
+            <span style="font-size: 2rem;">🚀</span>
+            <h4>Inovação Real</h4>
+            <p>Integração de dispensers higiênicos a granel com pedidos fáceis por WhatsApp, entrega por bike elétrica e planos de assinatura.</p>
+          </div>
+          <div class="pillar-box">
+            <span style="font-size: 2rem;">👥</span>
+            <h4>Público-Alvo</h4>
+            <p>Famílias, estudantes, condomínios e estabelecimentos da Vila Rezende e bairros vizinhos que valorizam economia e ecologia.</p>
+          </div>
+          <div class="pillar-box">
+            <span style="font-size: 2rem;">📈</span>
+            <h4>Impacto Comunitário</h4>
+            <p>Estímulo ao comércio de bairro, geração de renda local e conscientização ativa sobre resíduos sólidos urbanos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       9. LOCALIZAÇÃO FÍSICA
+       ======================================================================== -->
+  <section class="section section-cream" id="localizacao">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Espaço Físico</span>
+        <h2 class="section-title">Localização da Loja</h2>
+        <p class="section-subtitle">
+          Ponto comercial estrategicamente situado no tradicional bairro de Vila Rezende, em Piracicaba – SP.
+        </p>
+      </div>
+
+      <div class="location-card-grid">
+        <div>
+          <h3 style="color: var(--color-primary); font-size: 1.5rem; margin-bottom: 0.5rem;">Sede EcoRefil Piracicaba</h3>
+          <p style="color: var(--color-text-muted); font-size: 1.05rem;">
+            📍 <strong>Rua Maria Manieiro, Vila Rezende, Piracicaba – SP</strong>
+          </p>
+
+          <div class="location-specs-list">
+            <div class="spec-item">
+              <span class="label">Área do Imóvel</span>
+              <strong>68 m²</strong>
+            </div>
+            <div class="spec-item">
+              <span class="label">Instalações</span>
+              <strong>2 Banheiros</strong>
+            </div>
+            <div class="spec-item">
+              <span class="label">Copa & Apoio</span>
+              <strong>Copa Integrada</strong>
+            </div>
+            <div class="spec-item">
+              <span class="label">Estrutura</span>
+              <strong>Piso Superior</strong>
+            </div>
+            <div class="spec-item">
+              <span class="label">Custo Locatício</span>
+              <strong>Aluguel: R$ 1.500/mês</strong>
+            </div>
+            <div class="spec-item">
+              <span class="label">Acessibilidade</span>
+              <strong>Rua Plana e Acessível</strong>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="https://maps.google.com/?q=Rua+Maria+Manieiro+Vila+Rezende+Piracicaba+SP" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              🗺️ Como chegar (Google Maps)
+            </a>
+            <button type="button" class="btn btn-outline" onclick="openDirectWhatsAppChat()">
+              📱 Falar com a loja
+            </button>
+          </div>
+        </div>
+
+        <div class="map-embed-wrapper">
+          <!-- Mapa Interativo OpenStreetMap / Leaflet Embed -->
+          <iframe 
+            title="Localização do EcoRefil na Vila Rezende, Piracicaba"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=-47.6680%2C-22.7150%2C-47.6400%2C-22.7000&amp;layer=mapnik&amp;marker=-22.7080%2C-47.6540" 
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       10. SEÇÃO DO PROJETO ESCOLAR: ANÁLISE GEOGRÁFICA & MATERIAIS
+       ======================================================================== -->
+  <section class="section section-alt" id="projeto-empresarial">
+    <div class="container">
+      <div class="project-banner-intro">
+        <div>
+          <span style="font-size:0.85rem; text-transform:uppercase; letter-spacing:1px; color:#F8D88A; font-weight:800;">Apresentação Acadêmica & Executiva</span>
+          <h3>Estudo de Viabilidade Empresarial</h3>
+          <p>
+            Dados técnicos, análise mercadológica e estrutura de custos consolidados para a avaliação do projeto escolar EcoRefil.
+          </p>
+        </div>
+        <div>
+          <span class="badge badge-gold" style="font-size: 0.95rem; padding: 0.5rem 1rem;">Piracicaba • 2026</span>
+        </div>
+      </div>
+
+      <!-- Análise Geográfica -->
+      <div class="section-header">
+        <span class="section-tag">Estudo de Mercado</span>
+        <h2 class="section-title">Análise Geográfica</h2>
+        <p class="section-subtitle">
+          Caracterização territorial e oportunidades na microrregião de Piracicaba.
+        </p>
+      </div>
+
+      <div class="geo-analysis-grid">
+        <div class="geo-card highlight">
+          <h4>🎯 Público-Alvo</h4>
+          <p>Famílias e adultos residentes na Vila Rezende e bairros circunvizinhos (São Dimas, Centro, Cidade Alta). Pessoas responsáveis pelas compras do lar que buscam aliar redução de custos e sustentabilidade prática.</p>
+        </div>
+
+        <div class="geo-card">
+          <h4>🧼 Necessidade Essencial</h4>
+          <p>Produtos de limpeza doméstica e higiene pessoal são itens de consumo indispensável, inelástico e recorrente nas residências, garantindo demanda contínua durante todo o ano.</p>
+        </div>
+
+        <div class="geo-card">
+          <h4>🏪 Análise da Concorrência</h4>
+          <p>Supermercados tradicionais e drogarias vendem apenas embalagens descartáveis fechadas com margens elevadas. Lojas convencionais de produtos químicos não oferecem a experiência de refil limpo, delivery de bike nem WhatsApp.</p>
+        </div>
+
+        <div class="geo-card highlight">
+          <h4>✨ Oportunidade de Mercado</h4>
+          <p>O EcoRefil se posiciona como pioneiro regional ao unificar: venda a granel, reutilização de embalagens, pedidos por WhatsApp, clube de assinatura e delivery elétrico não poluente.</p>
+        </div>
+
+        <div class="geo-card">
+          <h4>📍 Facilidade de Acesso</h4>
+          <p>A Vila Rezende possui densidade populacional expressiva, perfil residencial consolidado, proximidade ao eixo comercial e facilidade de trânsito tanto para pedestres quanto para ciclistas.</p>
+        </div>
+
+        <div class="geo-card">
+          <h4>💰 Preço Compatível</h4>
+          <p>Ao eliminar o custo de produção e envase das embalagens rígidas descartáveis (que chegam a representar 35% do valor na gôndola), o EcoRefil oferece preços até 30% mais competitivos.</p>
+        </div>
+      </div>
+
+      <!-- Materiais e Insumos -->
+      <div style="margin-top: 5rem;">
+        <div class="section-header">
+          <span class="section-tag">Cadeia Produtiva</span>
+          <h2 class="section-title">Materiais e Insumos</h2>
+        </div>
+
+        <div class="supplies-concept-box">
+          <strong>Clarificação Conceitual:</strong> Como o EcoRefil adquire formulações químicas prontas e certificadas junto a indústrias parceiras para revenda fracionada por refil ao consumidor final, a nomenclatura técnica <em>“materiais e insumos”</em> é mais adequada do que <em>“matérias-primas”</em>.
+        </div>
+
+        <div class="supplies-grid">
+          <div class="supply-category-card">
+            <h4>🧪 Insumos das Formulações Químicas</h4>
+            <p style="font-size:0.9rem; color:var(--color-text-muted); margin-bottom:1rem;">Componentes ativos dos produtos de limpeza e higiene comercializados a granel:</p>
+            <div class="supply-tags-cloud">
+              <span class="supply-tag">💧 Água tratada e desmineralizada</span>
+              <span class="supply-tag">🌿 Tensoativos biodegradáveis</span>
+              <span class="supply-tag">🌸 Fragrâncias e essências naturais</span>
+              <span class="supply-tag">🎨 Corantes atóxicos</span>
+              <span class="supply-tag">🧴 Álcool etílico neutro</span>
+              <span class="supply-tag">🧼 Glicerina vegetal</span>
+              <span class="supply-tag">🌿 Óleo essencial de eucalipto</span>
+              <span class="supply-tag">🌾 Extrato de camomila e alecrim</span>
+            </div>
+          </div>
+
+          <div class="supply-category-card">
+            <h4>📦 Embalagens, Recipientes e Operação</h4>
+            <p style="font-size:0.9rem; color:var(--color-text-muted); margin-bottom:1rem;">Materiais utilizados na estocagem, dosagem e comercialização:</p>
+            <div class="supply-tags-cloud">
+              <span class="supply-tag">🧴 Frascos PET 100% reciclados (rPET)</span>
+              <span class="supply-tag">🛢️ Bombonas homologadas de refil (50L)</span>
+              <span class="supply-tag">🍾 Recipientes de vidro âmbar retornáveis</span>
+              <span class="supply-tag">🏷️ Etiquetas ecológicas em papel Kraft</span>
+              <span class="supply-tag">🚰 Torneiras dosadoras anti-respingo</span>
+              <span class="supply-tag">⚖️ Balanças de precisão aferidas (Inmetro)</span>
+              <span class="supply-tag">📦 Caixas térmicas de madeira para bike</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       11. INVESTIMENTO E PLANEJAMENTO FINANCEIRO
+       ======================================================================== -->
+  <section class="section section-cream" id="investimento">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Gestão Financeira</span>
+        <h2 class="section-title">Investimento & Planejamento Financeiro</h2>
+        <p class="section-subtitle">
+          Distribuição rigorosa do orçamento oficial de implantação da loja EcoRefil.
+        </p>
+      </div>
+
+      <!-- Cartões de Resumo Financeiro -->
+      <div class="finance-overview-cards">
+        <div class="finance-kpi-card highlight">
+          <span class="kpi-label">Capital Disponível Total</span>
+          <div class="kpi-val">R$ 40.000,00</div>
+          <span class="kpi-sub">Orçamento integral de partida</span>
+        </div>
+
+        <div class="finance-kpi-card gold">
+          <span class="kpi-label">Gasto Inicial (Implantação)</span>
+          <div class="kpi-val">R$ 18.674,76</div>
+          <span class="kpi-sub">46,7% do orçamento total</span>
+        </div>
+
+        <div class="finance-kpi-card">
+          <span class="kpi-label">Capital de Giro (Reserva)</span>
+          <div class="kpi-val">R$ 21.325,24</div>
+          <span class="kpi-sub">53,3% mantidos para segurança</span>
+        </div>
+      </div>
+
+      <!-- Grade com Gráfico e Tabela Detalhada -->
+      <div class="finance-breakdown-grid">
+        <div class="chart-wrapper">
+          <h4 style="color:var(--color-primary); margin-bottom:1rem; font-weight:800;">Divisão do Orçamento (R$ 40.000)</h4>
+          <canvas id="financeDonutChart" width="280" height="280" aria-label="Gráfico de Pizza: 46,7% Gasto Inicial vs 53,3% Capital de Giro"></canvas>
+          <div class="chart-legend">
+            <div class="legend-item">
+              <span class="legend-dot initial"></span>
+              <span>46,7% Gasto Inicial (R$ 18.674,76)</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-dot reserve"></span>
+              <span>53,3% Capital de Giro (R$ 21.325,24)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="categories-table-wrap">
+          <h4 style="color:var(--color-primary); margin-bottom:1rem; font-weight:800;">Detalhamento das Categorias de Gasto Inicial</h4>
+          <table>
+            <thead>
+              <tr>
+                <th>Categoria</th>
+                <th>Valor Alocado</th>
+                <th>% do Inicial</th>
+                <th>Finalidade</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Estrutura</strong></td>
+                <td><strong>R$ 8.062,22</strong></td>
+                <td>43,2%</td>
+                <td>Prateleiras de madeira, balcão, pintura, dispensadores e pia</td>
+              </tr>
+              <tr>
+                <td><strong>Entrega</strong></td>
+                <td><strong>R$ 5.265,25</strong></td>
+                <td>28,2%</td>
+                <td>Bicicleta elétrica cargueira e baú térmico de madeira</td>
+              </tr>
+              <tr>
+                <td><strong>Estoque</strong></td>
+                <td><strong>R$ 1.842,00</strong></td>
+                <td>9,9%</td>
+                <td>Lote inicial de produtos a granel (detergentes, sabões, desinfetantes)</td>
+              </tr>
+              <tr>
+                <td><strong>Aluguel</strong></td>
+                <td><strong>R$ 1.500,00</strong></td>
+                <td>8,0%</td>
+                <td>1º mês do ponto comercial na Rua Maria Manieiro</td>
+              </tr>
+              <tr>
+                <td><strong>Operação</strong></td>
+                <td><strong>R$ 1.353,72</strong></td>
+                <td>7,2%</td>
+                <td>Balança homologada, maquininha de cartão, sistema e fardamentos</td>
+              </tr>
+              <tr>
+                <td><strong>Outros</strong></td>
+                <td><strong>R$ 651,57</strong></td>
+                <td>3,5%</td>
+                <td>Taxas de abertura de MEI, alvará, papelaria e embalagens retornáveis</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr style="background-color: var(--color-accent-light); font-weight:800;">
+                <td>TOTAL INICIAL</td>
+                <td>R$ 18.674,76</td>
+                <td>100%</td>
+                <td>Implantação completa da operação</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       12. PITCH DE VENDAS
+       ======================================================================== -->
+  <section class="section section-alt" id="pitch">
+    <div class="container">
+      <div class="pitch-card-box">
+        <span class="badge badge-gold" style="font-size:0.85rem; padding:0.4rem 1rem; margin-bottom:1.5rem;">Pitch Executivo</span>
+        <h2 class="pitch-slogan-huge">“Você compra o produto, não a embalagem.”</h2>
+        <p class="pitch-text-content">
+          “O EcoRefil atende uma necessidade diária com um modelo de compra mais sustentável. O cliente compra apenas o produto que precisa, reutiliza sua embalagem e ainda pode contar com pedidos pelo WhatsApp, assinatura mensal e delivery.”
+        </p>
+
+        <div class="pitch-numbers-bar">
+          <div>
+            <span class="pitch-metric-val">R$ 40.000,00</span>
+            <span class="pitch-metric-lbl">Investimento Total</span>
+          </div>
+          <div>
+            <span class="pitch-metric-val">R$ 18.674,76</span>
+            <span class="pitch-metric-lbl">Gasto Inicial Alocado</span>
+          </div>
+          <div>
+            <span class="pitch-metric-val">R$ 21.325,24</span>
+            <span class="pitch-metric-lbl">Capital de Giro Preservado</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       13. CONTATO
+       ======================================================================== -->
+  <section class="section section-cream" id="contato">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Fale Conosco</span>
+        <h2 class="section-title">Entre em Contato</h2>
+        <p class="section-subtitle">
+          Tire dúvidas, faça orçamentos especiais para condomínios ou deixe sua sugestão.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info-card">
+          <h3 style="color:var(--color-primary); font-size:1.4rem; margin-bottom:0.75rem;">Canais de Atendimento</h3>
+          <p style="color:var(--color-text-muted); font-size:0.92rem;">
+            Estamos prontos para atender você pessoalmente ou online com agilidade.
+          </p>
+
+          <ul class="contact-info-list">
+            <li class="contact-info-item">
+              <span class="icon">📍</span>
+              <div>
+                <strong>Endereço da Loja:</strong>
+                <span>Rua Maria Manieiro, Vila Rezende, Piracicaba – SP</span>
+              </div>
+            </li>
+            <li class="contact-info-item">
+              <span class="icon">📱</span>
+              <div>
+                <strong>WhatsApp Oficial:</strong>
+                <span>(19) 99866-8149</span>
+              </div>
+            </li>
+            <li class="contact-info-item">
+              <span class="icon">✉️</span>
+              <div>
+                <strong>E-mail de Contato:</strong>
+                <span>contato@ecorefil.com.br</span>
+              </div>
+            </li>
+            <li class="contact-info-item">
+              <span class="icon">⏰</span>
+              <div>
+                <strong>Horário de Funcionamento:</strong>
+                <span>Segunda a Sexta: 08:30 às 18:30 | Sábado: 08:30 às 13:00</span>
+              </div>
+            </li>
+          </ul>
+
+          <div style="margin-top: 2rem;">
+            <button type="button" class="btn btn-whatsapp btn-block" onclick="openDirectWhatsAppChat()">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.586-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.453.748.971 1.21.668.595 1.232.78 1.406.866.173.087.275.072.376-.043.101-.116.433-.505.549-.679.116-.173.231-.144.39-.087s1.011.477 1.184.564c.173.087.289.13.332.202.043.073.043.419-.101.824z"/></svg>
+              Conversar no WhatsApp
+            </button>
+          </div>
+        </div>
+
+        <div class="contact-form-card">
+          <h3 style="color:var(--color-primary); font-size:1.4rem; margin-bottom:0.75rem;">Envie uma mensagem</h3>
+          <form id="contact-form">
+            <div class="form-group">
+              <label for="contact-name">Nome completo *</label>
+              <input type="text" id="contact-name" class="form-input" placeholder="Seu nome" required>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contact-email">E-mail *</label>
+                <input type="email" id="contact-email" class="form-input" placeholder="seu@email.com" required>
+              </div>
+              <div class="form-group">
+                <label for="contact-phone">Telefone / WhatsApp</label>
+                <input type="tel" id="contact-phone" class="form-input" placeholder="(19) 99999-9999">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-message">Mensagem *</label>
+              <textarea id="contact-message" class="form-textarea" rows="4" placeholder="Como podemos ajudar você com refil a granel?" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">
+              ✉️ Enviar mensagem
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       RODAPÉ (FOOTER)
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Eco<span>Refil</span></h3>
+          <p class="footer-slogan">“Você compra o produto, não a embalagem.”</p>
+          <p class="footer-desc">
+            Mercado de produtos de limpeza e higiene a granel. Uma solução prática, econômica e sustentável para o município de Piracicaba/SP.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <ul class="footer-links-list">
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#produtos">Produtos a Granel</a></li>
+            <li><a href="#como-funciona">Como Funciona</a></li>
+            <li><a href="#beneficios">EcoPontos</a></li>
+            <li><a href="#assinatura">Assinatura Mensal</a></li>
+            <li><a href="#delivery">Delivery de Bike</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Projeto Escolar</h4>
+          <ul class="footer-links-list">
+            <li><a href="#sobre">Sobre o Negócio</a></li>
+            <li><a href="#projeto-empresarial">Análise Geográfica</a></li>
+            <li><a href="#projeto-empresarial">Materiais e Insumos</a></li>
+            <li><a href="#investimento">Planejamento Financeiro</a></li>
+            <li><a href="#pitch">Pitch de Vendas</a></li>
+            <li><a href="javascript:void(0)" onclick="openAdminModal()">Área Administrativa</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Localização & Contato</h4>
+          <p class="footer-location-text">
+            📍 Rua Maria Manieiro<br>
+            Vila Rezende – Piracicaba/SP<br>
+            68 m² • Piso Superior
+          </p>
+          <p class="footer-location-text">
+            📱 WhatsApp: <strong>(19) 99866-8149</strong>
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div>
+          © 2026 EcoRefil – Mercado de Produtos a Granel. Todos os direitos reservados.
+        </div>
+        <div>
+          Protótipo Funcional para Apresentação Escolar • Piracicaba/SP
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       GAVETA LATERAL DO CARRINHO (DRAWER SLIDE-OVER)
+       ======================================================================== -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Carrinho de Compras">
+    <div class="cart-drawer-header">
+      <div class="cart-drawer-title">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <span>Meu Carrinho</span>
+      </div>
+      <button type="button" class="cart-close-btn" onclick="toggleCart(false)" aria-label="Fechar carrinho">✕</button>
+    </div>
+
+    <!-- Lista de Itens -->
+    <div class="cart-items-container" id="cart-items-container">
+      <!-- Injetado dinamicamente por cart.js -->
+    </div>
+
+    <!-- Mensagem de Carrinho Vazio -->
+    <div class="cart-empty-message hidden" id="cart-empty-message">
+      <div class="cart-empty-icon">🛒</div>
+      <h3>Seu carrinho está vazio</h3>
+      <p>Explore nossos produtos a granel e comece a economizar frascos plásticos!</p>
+      <button type="button" class="btn btn-primary btn-sm" onclick="toggleCart(false); scrollToSection('produtos')" style="margin-top: 1rem;">
+        Ver Produtos a Granel
+      </button>
+    </div>
+
+    <!-- Rodapé do Carrinho com Subtotal e Checkout -->
+    <div class="cart-footer-section" id="cart-footer-section">
+      <!-- Incentivo de Reutilização de Frascos -->
+      <div class="cart-reuse-incentive-box">
+        <label class="checkbox-label">
+          <input type="checkbox" id="cart-reuse-packaging-check">
+          <span>Vou levar minha própria embalagem para o refil (+5 EcoPontos por item!) ♻️</span>
+        </label>
+      </div>
+
+      <div class="cart-summary-line">
+        <span>Subtotal:</span>
+        <strong id="cart-subtotal-val">R$ 0,00</strong>
+      </div>
+      <div class="cart-summary-line hidden" id="cart-discount-row">
+        <span>Desconto EcoPontos:</span>
+        <strong class="cart-discount-text" id="cart-discount-val">- R$ 0,00</strong>
+      </div>
+      <div class="cart-summary-line total-line">
+        <span>Total:</span>
+        <strong id="cart-total-val">R$ 0,00</strong>
+      </div>
+
+      <div class="cart-points-info-badge" id="cart-earned-points-badge">
+        +10 EcoPontos nesta compra!
+      </div>
+
+      <div class="cart-action-buttons">
+        <button type="button" class="btn btn-primary btn-block btn-lg" onclick="openCheckoutModal()">
+          Finalizar pedido
+        </button>
+        <button type="button" class="btn btn-outline btn-block btn-sm" onclick="clearCart()">
+          Limpar carrinho
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ========================================================================
+       MODAL DE DETALHES DO PRODUTO (QUICK VIEW)
+       ======================================================================== -->
+  <div class="modal-overlay" id="product-detail-modal">
+    <div class="modal-container modal-lg">
+      <div class="modal-header">
+        <h3 class="modal-title">Detalhes do Produto a Granel</h3>
+        <button type="button" class="modal-close-btn" onclick="closeProductDetailModal()">✕</button>
+      </div>
+      <div class="modal-body" id="product-detail-body">
+        <!-- Renderizado dinamicamente por products.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MODAL DE CHECKOUT
+       ======================================================================== -->
+  <div class="modal-overlay" id="checkout-modal">
+    <div class="modal-container modal-lg">
+      <div class="modal-header">
+        <h3 class="modal-title">Finalizar Pedido • EcoRefil</h3>
+        <button type="button" class="modal-close-btn" onclick="closeCheckoutModal()">✕</button>
+      </div>
+      <div class="modal-body">
+        <form id="checkout-form" onsubmit="submitCheckoutOrder(event)">
+          <div class="checkout-grid">
+            <!-- Dados do Cliente & Entrega -->
+            <div>
+              <h4 style="color:var(--color-primary); font-size:1.15rem; margin-bottom:1rem;">1. Seus Dados</h4>
+              <div class="form-group">
+                <label for="checkout-name">Nome completo *</label>
+                <input type="text" id="checkout-name" class="form-input" placeholder="Ex: Camila Ferreira" required>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="checkout-phone">Telefone / WhatsApp *</label>
+                  <input type="tel" id="checkout-phone" class="form-input" placeholder="(19) 99876-5432" required>
+                </div>
+                <div class="form-group">
+                  <label for="checkout-email">E-mail</label>
+                  <input type="email" id="checkout-email" class="form-input" placeholder="seu@email.com">
+                </div>
+              </div>
+
+              <h4 style="color:var(--color-primary); font-size:1.15rem; margin:1.5rem 0 0.8rem;">2. Forma de Entrega</h4>
+              <div style="display:flex; flex-direction:column; gap:0.6rem; margin-bottom:1rem;">
+                <label class="checkbox-label" style="background:#F4F7F4; padding:0.75rem; border-radius:var(--radius-sm); border:1px solid var(--color-border);">
+                  <input type="radio" name="checkout-delivery-mode" value="retirada" checked onchange="onDeliveryModeChanged()">
+                  <div>
+                    <strong>🏪 Retirada na Loja física (Grátis)</strong>
+                    <div style="font-size:0.78rem; color:var(--color-text-muted);">Rua Maria Manieiro, Vila Rezende, Piracicaba/SP</div>
+                  </div>
+                </label>
+
+                <label class="checkbox-label" style="background:#F4F7F4; padding:0.75rem; border-radius:var(--radius-sm); border:1px solid var(--color-border);">
+                  <input type="radio" name="checkout-delivery-mode" value="bike" onchange="onDeliveryModeChanged()">
+                  <div>
+                    <strong>🚲 Entrega por Bicicleta Elétrica</strong>
+                    <div style="font-size:0.78rem; color:var(--color-text-muted);">Entrega limpa com taxa conforme o bairro</div>
+                  </div>
+                </label>
+              </div>
+
+              <!-- Campos de Endereço (condicionais para bike) -->
+              <div id="checkout-delivery-address-fields" class="hidden">
+                <div class="form-row">
+                  <div class="form-group" style="flex:2;">
+                    <label for="checkout-address">Endereço (Rua/Avenida) *</label>
+                    <input type="text" id="checkout-address" class="form-input" placeholder="Rua Maria Manieiro">
+                  </div>
+                  <div class="form-group" style="flex:1;">
+                    <label for="checkout-number">Número *</label>
+                    <input type="text" id="checkout-number" class="form-input" placeholder="100">
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="checkout-neighborhood">Bairro (Piracicaba) *</label>
+                    <select id="checkout-neighborhood" class="form-select" onchange="updateCheckoutSummary()">
+                      <option value="Vila Rezende" selected>Vila Rezende (R$ 3,00)</option>
+                      <option value="São Dimas">São Dimas (R$ 5,00)</option>
+                      <option value="Cidade Alta">Cidade Alta (R$ 6,00)</option>
+                      <option value="Centro">Centro (R$ 5,00)</option>
+                      <option value="Jardim Primavera">Jardim Primavera (R$ 7,00)</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="checkout-cep">CEP</label>
+                    <input type="text" id="checkout-cep" class="form-input" placeholder="13405-000">
+                  </div>
+                </div>
+              </div>
+
+              <h4 style="color:var(--color-primary); font-size:1.15rem; margin:1.5rem 0 0.8rem;">3. Forma de Pagamento</h4>
+              <div class="payment-options-grid">
+                <label class="payment-radio-card active">
+                  <input type="radio" name="checkout-payment-method" value="pix" checked onchange="onPaymentMethodChanged()">
+                  <div style="font-size:1.4rem;">📱</div>
+                  <strong>Pix</strong>
+                </label>
+                <label class="payment-radio-card">
+                  <input type="radio" name="checkout-payment-method" value="card" onchange="onPaymentMethodChanged()">
+                  <div style="font-size:1.4rem;">💳</div>
+                  <strong>Cartão</strong>
+                </label>
+                <label class="payment-radio-card">
+                  <input type="radio" name="checkout-payment-method" value="cash" onchange="onPaymentMethodChanged()">
+                  <div style="font-size:1.4rem;">💵</div>
+                  <strong>Dinheiro</strong>
+                </label>
+              </div>
+
+              <!-- Detalhes Pagamento Pix -->
+              <div id="payment-details-pix" class="payment-details-box">
+                <p style="font-size:0.85rem; color:var(--color-text-main); margin-bottom:0.5rem;">
+                  Pague com a chave Pix do EcoRefil e anexe o comprovante no WhatsApp:
+                </p>
+                <div class="pix-key-display">Chave Celular: 19998668149</div>
+                <button type="button" class="btn btn-outline btn-xs" onclick="copyPixKey()">
+                  📋 Copiar Chave Pix
+                </button>
+              </div>
+
+              <!-- Detalhes Pagamento Cartão -->
+              <div id="payment-details-card" class="payment-details-box hidden">
+                <p style="font-size:0.85rem; color:var(--color-text-muted);">
+                  💳 O ciclista levará a maquininha sem fio (Crédito, Débito e Aproximação) até você, ou pague no balcão da loja.
+                </p>
+              </div>
+
+              <!-- Detalhes Pagamento Dinheiro -->
+              <div id="payment-details-cash" class="payment-details-box hidden">
+                <label for="checkout-change" style="font-size:0.85rem; display:block; margin-bottom:0.3rem;">Precisa de troco para quanto?</label>
+                <input type="text" id="checkout-change" class="form-input" placeholder="Ex: R$ 50,00 (ou Não preciso)">
+              </div>
+            </div>
+
+            <!-- Resumo do Pedido -->
+            <div>
+              <div class="checkout-summary-box">
+                <h4 style="color:var(--color-primary); font-size:1.15rem; margin-bottom:1rem;">Resumo do Pedido</h4>
+                
+                <div class="checkout-items-list" id="checkout-items-list">
+                  <!-- Injetado por app.js -->
+                </div>
+
+                <div class="cart-summary-line">
+                  <span>Subtotal:</span>
+                  <strong id="checkout-subtotal-val">R$ 0,00</strong>
+                </div>
+                <div class="cart-summary-line">
+                  <span>Frete / Entrega:</span>
+                  <strong id="checkout-delivery-fee-val">Grátis (Retirada)</strong>
+                </div>
+                <div class="cart-summary-line total-line">
+                  <span>Total Final:</span>
+                  <strong id="checkout-total-val" style="color:var(--color-primary); font-size:1.4rem;">R$ 0,00</strong>
+                </div>
+
+                <div class="success-points-alert" style="margin-bottom:1.5rem;">
+                  🌱 Você vai ganhar: <strong id="checkout-points-earn-val">+10 EcoPontos</strong>!
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block btn-lg">
+                  Confirmar pedido
+                </button>
+                <p style="text-align:center; font-size:0.75rem; color:var(--color-text-light); margin-top:0.75rem;">
+                  Ambiente seguro • Simulação do protótipo EcoRefil
+                </p>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MODAL DE SUCESSO DO PEDIDO
+       ======================================================================== -->
+  <div class="modal-overlay" id="order-success-modal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 class="modal-title">Pedido Confirmado!</h3>
+        <button type="button" class="modal-close-btn" onclick="closeOrderSuccessModal()">✕</button>
+      </div>
+      <div class="modal-body" id="order-success-content">
+        <!-- Injetado por app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MODAL DE AUTENTICAÇÃO / LOGIN / PERFIL
+       ======================================================================== -->
+  <div class="modal-overlay" id="auth-modal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 class="modal-title">Área do Cliente • EcoRefil</h3>
+        <button type="button" class="modal-close-btn" onclick="closeAuthModal()">✕</button>
+      </div>
+      <div class="modal-body">
+        <!-- Abas Login / Cadastro -->
+        <div class="auth-tabs-header">
+          <button type="button" class="auth-tab-btn active" data-tab="login" onclick="switchAuthTab('login')">Entrar</button>
+          <button type="button" class="auth-tab-btn" data-tab="register" onclick="switchAuthTab('register')">Cadastrar</button>
+          <button type="button" class="auth-tab-btn hidden" data-tab="profile" onclick="switchAuthTab('profile')">Meu Perfil</button>
+        </div>
+
+        <!-- Vista: Login -->
+        <div id="auth-view-login">
+          <form id="form-login">
+            <div class="form-group">
+              <label for="login-email">E-mail</label>
+              <input type="email" id="login-email" class="form-input" placeholder="cliente@ecorefil.com.br" value="cliente@ecorefil.com.br" required>
+            </div>
+            <div class="form-group">
+              <label for="login-password">Senha</label>
+              <input type="password" id="login-password" class="form-input" placeholder="Sua senha" value="123" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block btn-lg" style="margin-top: 1rem;">
+              Entrar na conta
+            </button>
+
+            <div style="background:#F8FAF8; padding:0.75rem; border-radius:var(--radius-sm); border:1px solid var(--color-border); margin-top:1.25rem; font-size:0.82rem; color:var(--color-text-muted);">
+              💡 <strong>Dica de Demonstração:</strong> Já preenchemos uma conta de teste (cliente@ecorefil.com.br / 123) com 65 EcoPontos e pedidos simulados para facilitar a avaliação do projeto.
+            </div>
+          </form>
+        </div>
+
+        <!-- Vista: Cadastro -->
+        <div id="auth-view-register" class="hidden">
+          <form id="form-register">
+            <div class="form-group">
+              <label for="reg-name">Nome completo *</label>
+              <input type="text" id="reg-name" class="form-input" placeholder="Seu nome" required>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="reg-email">E-mail *</label>
+                <input type="email" id="reg-email" class="form-input" placeholder="seu@email.com" required>
+              </div>
+              <div class="form-group">
+                <label for="reg-password">Senha *</label>
+                <input type="password" id="reg-password" class="form-input" placeholder="Crie uma senha" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="reg-phone">Telefone / WhatsApp</label>
+                <input type="tel" id="reg-phone" class="form-input" placeholder="(19) 99999-9999">
+              </div>
+              <div class="form-group">
+                <label for="reg-neighborhood">Bairro</label>
+                <select id="reg-neighborhood" class="form-select">
+                  <option value="Vila Rezende">Vila Rezende</option>
+                  <option value="São Dimas">São Dimas</option>
+                  <option value="Cidade Alta">Cidade Alta</option>
+                  <option value="Centro">Centro</option>
+                  <option value="Jardim Primavera">Jardim Primavera</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="reg-address">Endereço</label>
+              <input type="text" id="reg-address" class="form-input" placeholder="Rua / Avenida e número">
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block btn-lg" style="margin-top: 1rem;">
+              Criar Conta e Ganhar +20 EcoPontos
+            </button>
+            <p style="font-size:0.75rem; color:var(--color-text-light); text-align:center; margin-top:0.75rem;">
+              Simulação de cadastro em localStorage sem envio para servidores externos.
+            </p>
+          </form>
+        </div>
+
+        <!-- Vista: Perfil do Usuário Logado -->
+        <div id="auth-view-profile" class="hidden">
+          <div id="auth-profile-content">
+            <!-- Injetado por auth.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MODAL DE ECOPONTOS (BENEFÍCIOS)
+       ======================================================================== -->
+  <div class="modal-overlay" id="ecopoints-modal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 class="modal-title">Programa EcoPontos • Resgate de Benefícios</h3>
+        <button type="button" class="modal-close-btn" onclick="closeEcoPointsModal()">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="profile-ecopoints-card" style="margin-bottom:1.5rem;">
+          <div class="points-header">
+            <div>
+              <span class="points-label">Seu Saldo Disponível:</span>
+              <div class="points-huge" id="modal-ecopoints-current">0 EcoPontos</div>
+            </div>
+            <span style="font-size:2rem;">🌱</span>
+          </div>
+          <p class="points-explanation">
+            Regra: Cada compra finalizada (+10 pontos). Cada embalagem reutilizada (+5 pontos por item).
+          </p>
+        </div>
+
+        <h4 style="color:var(--color-primary); margin-bottom:1rem;">Escolha um benefício para aplicar:</h4>
+        <div style="display:flex; flex-direction:column; gap:1rem;">
+          <!-- Benefício 50 pts -->
+          <div style="background:#FAF8F0; border:1px solid var(--color-border); border-radius:var(--radius-sm); padding:1rem; display:flex; justify-content:space-between; align-items:center;">
+            <div>
+              <strong style="color:var(--color-primary); font-size:1.05rem;">5% de Desconto na Compra</strong>
+              <div style="font-size:0.82rem; color:var(--color-text-muted);">Custo: 50 EcoPontos • Aplicado diretamente no carrinho</div>
+            </div>
+            <button type="button" class="btn btn-gold btn-sm" id="claim-coupon-50" onclick="claimCoupon(50, 'percent', 5, '5% de desconto')">
+              Resgatar
+            </button>
+          </div>
+
+          <!-- Benefício 100 pts -->
+          <div style="background:#FAF8F0; border:1px solid var(--color-border); border-radius:var(--radius-sm); padding:1rem; display:flex; justify-content:space-between; align-items:center;">
+            <div>
+              <strong style="color:var(--color-primary); font-size:1.05rem;">10% de Desconto na Compra</strong>
+              <div style="font-size:0.82rem; color:var(--color-text-muted);">Custo: 100 EcoPontos • Válido para qualquer volume</div>
+            </div>
+            <button type="button" class="btn btn-gold btn-sm" id="claim-coupon-100" onclick="claimCoupon(100, 'percent', 10, '10% de desconto')">
+              Resgatar
+            </button>
+          </div>
+
+          <!-- Benefício 200 pts -->
+          <div style="background:#FAF8F0; border:1px solid var(--color-border); border-radius:var(--radius-sm); padding:1rem; display:flex; justify-content:space-between; align-items:center;">
+            <div>
+              <strong style="color:var(--color-primary); font-size:1.05rem;">Frete Grátis na Vila Rezende</strong>
+              <div style="font-size:0.82rem; color:var(--color-text-muted);">Custo: 200 EcoPontos • Entrega sustentável gratuita por bike</div>
+            </div>
+            <button type="button" class="btn btn-gold btn-sm" id="claim-coupon-200" onclick="claimCoupon(200, 'free_shipping', 100, 'Frete Grátis')">
+              Resgatar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MODAL DE ADESÃO DE ASSINATURA MENSAL
+       ======================================================================== -->
+  <div class="modal-overlay" id="subscription-modal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 class="modal-title">Assinar EcoRefil Mensal</h3>
+        <button type="button" class="modal-close-btn" onclick="closeSubscriptionModal()">✕</button>
+      </div>
+      <div class="modal-body">
+        <div style="background:#EBF3ED; border-radius:var(--radius-sm); padding:1rem; margin-bottom:1.5rem;">
+          <h4 id="sub-modal-plan-title" style="color:var(--color-primary); font-size:1.2rem;">Plano EcoRefil Família</h4>
+          <strong id="sub-modal-plan-price" style="font-size:1.5rem; color:var(--color-primary);">R$ 69,90/mês</strong>
+          <p id="sub-modal-plan-desc" style="font-size:0.85rem; color:var(--color-text-muted); margin-top:0.35rem;"></p>
+        </div>
+
+        <form id="form-subscription" onsubmit="submitSubscription(event)">
+          <div class="form-group">
+            <label for="sub-name">Nome completo *</label>
+            <input type="text" id="sub-name" class="form-input" placeholder="Seu nome" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="sub-phone">WhatsApp *</label>
+              <input type="tel" id="sub-phone" class="form-input" placeholder="(19) 99876-5432" required>
+            </div>
+            <div class="form-group">
+              <label for="sub-email">E-mail *</label>
+              <input type="email" id="sub-email" class="form-input" placeholder="seu@email.com" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="sub-address">Endereço de Entrega Recorrente *</label>
+            <input type="text" id="sub-address" class="form-input" placeholder="Rua, número, bairro - Piracicaba/SP" required>
+          </div>
+
+          <div class="form-group">
+            <label for="sub-day">Melhor dia do mês para entrega:</label>
+            <select id="sub-day" class="form-select">
+              <option value="05">Todo dia 05</option>
+              <option value="10" selected>Todo dia 10</option>
+              <option value="15">Todo dia 15</option>
+              <option value="20">Todo dia 20</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block btn-lg" style="margin-top: 1rem;">
+            Confirmar Assinatura Mensal
+          </button>
+          <p style="font-size:0.75rem; color:var(--color-text-light); text-align:center; margin-top:0.75rem;">
+            *Simulação frontend. Sem cobrança real de cartão nesta versão. Salvo no localStorage.
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MODAL DE ÁREA ADMINISTRATIVA (ADMIN DASHBOARD)
+       ======================================================================== -->
+  <div class="modal-overlay" id="admin-modal">
+    <div class="modal-container modal-xl">
+      <div class="modal-header">
+        <div>
+          <h3 class="modal-title">Painel Administrativo • EcoRefil</h3>
+          <span style="font-size:0.8rem; color:var(--color-text-muted);">Gestão de Produtos, Pedidos e Indicadores da Apresentação</span>
+        </div>
+        <div style="display:flex; gap:0.5rem; align-items:center;">
+          <button type="button" class="btn btn-outline btn-xs" onclick="restoreAdminDemoData()" title="Restaura os dados originais para apresentação">
+            🔄 Restaurar Dados Padrão
+          </button>
+          <button type="button" class="modal-close-btn" onclick="closeAdminModal()">✕</button>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <!-- Indicadores / Métricas do Dashboard -->
+        <div class="admin-metrics-row">
+          <div class="admin-metric-card">
+            <span class="label">Produtos Ativos</span>
+            <strong id="admin-metric-products">7</strong>
+          </div>
+          <div class="admin-metric-card">
+            <span class="label">Pedidos Registrados</span>
+            <strong id="admin-metric-orders">18</strong>
+          </div>
+          <div class="admin-metric-card">
+            <span class="label">Usuários Cadastrados</span>
+            <strong id="admin-metric-users">2</strong>
+          </div>
+          <div class="admin-metric-card">
+            <span class="label">Vendas Simuladas</span>
+            <strong id="admin-metric-sales">R$ 1.842,50</strong>
+          </div>
+          <div class="admin-metric-card">
+            <span class="label">Litros a Granel</span>
+            <strong id="admin-metric-liters">315 L</strong>
+          </div>
+        </div>
+
+        <!-- Navegação de Abas do Admin -->
+        <div class="admin-tabs-nav">
+          <div class="admin-tab-btn-group">
+            <button type="button" class="admin-tab-btn active" id="admin-tab-btn-prods" onclick="document.getElementById('admin-view-prods').classList.remove('hidden'); document.getElementById('admin-view-orders').classList.add('hidden'); this.classList.add('active'); document.getElementById('admin-tab-btn-orders').classList.remove('active');">
+              📦 Gerenciar Produtos
+            </button>
+            <button type="button" class="admin-tab-btn" id="admin-tab-btn-orders" onclick="document.getElementById('admin-view-orders').classList.remove('hidden'); document.getElementById('admin-view-prods').classList.add('hidden'); this.classList.add('active'); document.getElementById('admin-tab-btn-prods').classList.remove('active');">
+              📋 Monitor de Pedidos
+            </button>
+          </div>
+
+          <button type="button" class="btn btn-primary btn-sm" onclick="openNewProductForm()">
+            + Adicionar Novo Produto
+          </button>
+        </div>
+
+        <!-- Aba: Gerenciamento de Produtos -->
+        <div id="admin-view-prods">
+          <div class="admin-table-wrapper">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th style="width:60px;">Foto</th>
+                  <th>Nome do Produto</th>
+                  <th>Categoria</th>
+                  <th>Preço / Litro</th>
+                  <th>Destaque</th>
+                  <th style="width:140px;">Ações</th>
+                </tr>
+              </thead>
+              <tbody id="admin-products-tbody">
+                <!-- Injetado por admin.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Aba: Monitor de Pedidos -->
+        <div id="admin-view-orders" class="hidden">
+          <div class="admin-table-wrapper">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Nº Pedido</th>
+                  <th>Cliente</th>
+                  <th>Itens (Litros)</th>
+                  <th>Valor Total</th>
+                  <th>Entrega</th>
+                  <th>Pagamento</th>
+                  <th>Status do Pedido</th>
+                </tr>
+              </thead>
+              <tbody id="admin-orders-tbody">
+                <!-- Injetado por admin.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MODAL DE ADICIONAR / EDITAR PRODUTO NO ADMIN
+       ======================================================================== -->
+  <div class="modal-overlay" id="admin-product-edit-modal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 class="modal-title" id="admin-prod-form-title">Adicionar Novo Produto a Granel</h3>
+        <button type="button" class="modal-close-btn" onclick="closeProductEditForm()">✕</button>
+      </div>
+      <div class="modal-body">
+        <form id="admin-product-form" onsubmit="saveAdminProduct(event)">
+          <div class="form-group">
+            <label for="admin-prod-name">Nome do Produto *</label>
+            <input type="text" id="admin-prod-name" class="form-input" placeholder="Ex: Multiuso Biodegradável" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="admin-prod-category">Categoria *</label>
+              <select id="admin-prod-category" class="form-select">
+                <option value="limpeza">Limpeza</option>
+                <option value="higiene">Higiene</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="admin-prod-price">Preço por Litro (R$) *</label>
+              <input type="number" id="admin-prod-price" class="form-input" step="0.01" min="0.10" placeholder="Ex: 4.50" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group" style="flex:2;">
+              <label for="admin-prod-image">Caminho da Imagem</label>
+              <input type="text" id="admin-prod-image" class="form-input" placeholder="Ex: img/detergente.jpg" value="img/detergente.jpg">
+            </div>
+            <div class="form-group" style="flex:1; display:flex; align-items:center; justify-content:center;">
+              <img id="admin-form-img-preview" src="img/detergente.jpg" alt="Preview" style="width:48px; height:48px; object-fit:cover; border-radius:6px; border:1px solid var(--color-border);">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="admin-prod-shortdesc">Descrição Curta *</label>
+            <input type="text" id="admin-prod-shortdesc" class="form-input" placeholder="Resumo do produto para o card..." required>
+          </div>
+
+          <div class="form-group">
+            <label for="admin-prod-fulldesc">Descrição Completa</label>
+            <textarea id="admin-prod-fulldesc" class="form-textarea" rows="3" placeholder="Informações detalhadas sobre formulação e rendimento..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="admin-prod-ecobenefit">Benefício Ecológico</label>
+            <input type="text" id="admin-prod-ecobenefit" class="form-input" placeholder="Ex: Economiza 1 frasco de plástico por litro">
+          </div>
+
+          <div class="form-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="admin-prod-bestseller">
+              <span>Marcar como "Mais Vendido" (Destaque)</span>
+            </label>
+          </div>
+
+          <div style="display:flex; justify-content:flex-end; gap:0.75rem; margin-top:1.5rem;">
+            <button type="button" class="btn btn-outline" onclick="closeProductEditForm()">Cancelar</button>
+            <button type="submit" class="btn btn-primary">Salvar Produto</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       NOTIFICAÇÕES TOAST (CONTAINER)
+       ======================================================================== -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- ========================================================================
+       BOTÃO VOLTAR AO TOPO
+       ======================================================================== -->
+  <button type="button" class="back-to-top-btn" id="back-to-top-btn" title="Voltar ao topo da página" aria-label="Voltar ao topo">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
+
+  <!-- ========================================================================
+       BOTÃO FLUTUANTE DO WHATSAPP
+       ======================================================================== -->
+  <button type="button" class="floating-whatsapp-btn" onclick="openDirectWhatsAppChat()" title="Conversar no WhatsApp: (19) 99866-8149" aria-label="WhatsApp">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.586-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.182-.077.357.101.174.453.748.971 1.21.668.595 1.232.78 1.406.866.173.087.275.072.376-.043.101-.116.433-.505.549-.679.116-.173.231-.144.39-.087s1.011.477 1.184.564c.173.087.289.13.332.202.043.073.043.419-.101.824z"/></svg>
+  </button>
+
+  <!-- ========================================================================
+       SCRIPTS JAVASCRIPT
+       ======================================================================== -->
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/admin.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
