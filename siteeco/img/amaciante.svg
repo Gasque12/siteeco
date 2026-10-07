@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FAF8F0"/>
+      <stop offset="100%" stop-color="#E5EFE6"/>
+    </linearGradient>
+    <linearGradient id="liquid" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#BFDBFE"/>
+      <stop offset="50%" stop-color="#93C5FD"/>
+      <stop offset="100%" stop-color="#60A5FA"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.8"/>
+      <stop offset="10%" stop-color="#E0F2FE" stop-opacity="0.3"/>
+      <stop offset="90%" stop-color="#E0F2FE" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#BAE6FD" stop-opacity="0.6"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="18" stdDeviation="15" flood-color="#1F5B3A" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <rect width="600" height="600" rx="24" fill="url(#bg)"/>
+  <ellipse cx="300" cy="510" rx="140" ry="24" fill="#1F5B3A" opacity="0.08"/>
+
+  <!-- Bottle Group -->
+  <g filter="url(#shadow)">
+    <!-- Cap -->
+    <rect x="260" y="70" width="80" height="36" rx="8" fill="#B88B37"/>
+    <rect x="256" y="98" width="88" height="12" rx="4" fill="#996F26"/>
+    <!-- Neck -->
+    <rect x="270" y="110" width="60" height="40" fill="url(#glass)"/>
+    <!-- Body -->
+    <path d="M 210 200 C 210 160 250 150 270 150 L 330 150 C 350 150 390 160 390 200 L 390 470 C 390 495 370 510 340 510 L 260 510 C 230 510 210 495 210 470 Z" fill="#E2E8F0" opacity="0.4"/>
+    
+    <!-- Liquid content -->
+    <path d="M 216 230 C 240 225 360 235 384 230 L 384 470 C 384 490 366 504 338 504 L 262 504 C 234 504 216 490 216 470 Z" fill="url(#liquid)"/>
+    
+    <!-- Bottle Highlights -->
+    <path d="M 226 230 L 226 480" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" opacity="0.5"/>
+    <path d="M 210 200 C 210 160 250 150 270 150 L 330 150 C 350 150 390 160 390 200 L 390 470 C 390 495 370 510 340 510 L 260 510 C 230 510 210 495 210 470 Z" fill="url(#glass)"/>
+  </g>
+
+  <!-- Eco Paper Label -->
+  <g filter="url(#shadow)">
+    <rect x="228" y="270" width="144" height="180" rx="8" fill="#FAF8F0"/>
+    <rect x="232" y="274" width="136" height="172" rx="6" fill="none" stroke="#1F5B3A" stroke-width="1.5" stroke-dasharray="4,2"/>
+    
+    <!-- Logo & Text -->
+    <circle cx="300" cy="305" r="16" fill="#1F5B3A"/>
+    <path d="M 300 293 C 308 298 312 306 300 317 C 288 306 292 298 300 293 Z" fill="#E5EFE6"/>
+    
+    <text x="300" y="340" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="14" font-weight="800" fill="#1F5B3A" text-anchor="middle" letter-spacing="1">AMACIANTE</text>
+    <text x="300" y="358" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="11" font-weight="600" fill="#B88B37" text-anchor="middle">EcoRefil</text>
+    
+    <line x1="255" y1="372" x2="345" y2="372" stroke="#E5EFE6" stroke-width="1.5"/>
+    
+    <text x="300" y="392" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="9" fill="#2B362F" text-anchor="middle">Toque de Algodão</text>
+    <text x="300" y="406" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="8" fill="#64748B" text-anchor="middle">Fórmula Biodegradável</text>
+    <text x="300" y="425" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="10" font-weight="bold" fill="#1F5B3A" text-anchor="middle">REFIL A GRANEL</text>
+  </g>
+</svg>

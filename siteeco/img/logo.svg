@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" width="240" height="60">
+  <defs>
+    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1F5B3A"/>
+      <stop offset="100%" stop-color="#2D7A50"/>
+    </linearGradient>
+  </defs>
+  <!-- Leaf and Drop Icon -->
+  <g transform="translate(10, 6)">
+    <circle cx="24" cy="24" r="22" fill="#E5EFE6"/>
+    <!-- Recycled Leaf Loop -->
+    <path d="M 24 10 C 33 16 35 27 26 34 C 20 39 12 34 14 26 C 15 20 20 14 24 10 Z" fill="url(#logoGrad)"/>
+    <path d="M 21 21 C 24 16 32 18 31 27 C 30 33 24 33 21 31" fill="none" stroke="#FAF8F0" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="32" cy="18" r="4" fill="#B88B37"/>
+  </g>
+  <!-- Text -->
+  <text x="68" y="34" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-size="26" font-weight="800" fill="#1F5B3A" letter-spacing="-0.5">Eco<tspan fill="#B88B37">Refil</tspan></text>
+  <text x="69" y="48" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-size="9" font-weight="600" fill="#6B7280" letter-spacing="1.8">PRODUTOS A GRANEL</text>
+</svg>
